@@ -27,7 +27,7 @@ function App(props) {
         path={`${currentPath}/order-confirmation`}
         component={OrderConfirmationContainer}
       />
-      <Route path={`${currentPath}/product/:id`} component={SingleProductContainer} />
+      <Route exact path={`${currentPath}/product/:id`} component={SingleProductContainer} />
       <Route
         path={`${currentPath}/one-click-checkout/:productId`}
         component={OneClickCheckout}

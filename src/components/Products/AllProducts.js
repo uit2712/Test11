@@ -37,7 +37,7 @@ const AllProducts = props => {
                   <Link
                     className="product-item"
                     to={'/product/' + product.id}
-                    onClick={() => window.ga_onProductClick(product, eventCategory)}
+                    // onClick={() => window.ga_onProductClick(product, eventCategory)}
                     key={product.id}>
                     <div
                       className="product-image"

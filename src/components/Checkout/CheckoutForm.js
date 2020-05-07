@@ -100,6 +100,7 @@ class CheckoutForm extends Component {
 
   checkOutStep = (step) => {
     const products = this.state.products;
+    console.log('hihi');
     if (products.length > 0) {
       let stepOption = '';
       switch(step) {

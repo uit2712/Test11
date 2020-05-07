@@ -103,6 +103,7 @@ class CheckoutForm extends Component {
     if (products.length === 0)
       return;
 
+    console.log('Cart products: ', products);
     let stepOption = '';
     switch(step) {
       default: break;

@@ -19,6 +19,7 @@ const AllProducts = props => {
   if (props.css !== null && props.products.products.data.length > 0) {
     var products = props.products.products;
     const eventCategory = 'All Products';
+    window.ga_onViewListProducts(products.data);
 
     return (
       <main role="main" id="container" className="main-container push">

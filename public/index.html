@@ -92,6 +92,22 @@
         });
       }
 
+      window.ga_onViewListProducts = function(products) {
+        if (!products)
+          return;
+
+        products.forEach(product => {
+          ga('ec:addImpression', {
+            id: product?.id,
+            name: product?.name,
+            price: product?.price[0]?.amount,
+          })
+        });
+
+        ga('ec:setAction', eventAction.detail);
+        ga('send', hitType.pageview);
+      }
+
       window.ga_onViewProduct = function(product) {
         if (!product)
           return;

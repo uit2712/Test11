@@ -20,7 +20,6 @@ class CartCounter extends Component {
     }
 
     const pathname = process.env.PUBLIC_URL;
-    console.log('pathname: ', pathname);
     return (
       <Link to={pathname + "/cart"} className="cart" aria-live="polite">
         <span className="cart-name" aria-hidden="true">

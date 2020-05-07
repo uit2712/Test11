@@ -53,8 +53,12 @@ var PaymentTemplate = {
 const eventCategory = 'Check out';
 
 class CheckoutForm extends Component {
-  state = {
-    products: [],
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      products: [],
+    }
   }
 
   handleKeyDown = function(e) {
@@ -100,7 +104,6 @@ class CheckoutForm extends Component {
 
   checkOutStep = (step) => {
     const products = this.state.products;
-    console.log('hihi');
     if (products.length > 0) {
       let stepOption = '';
       switch(step) {

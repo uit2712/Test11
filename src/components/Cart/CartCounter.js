@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, matchPath } from 'react-router-dom';
 
 import { GetCartItems } from '../../ducks/cart';
 
@@ -19,8 +19,10 @@ class CartCounter extends Component {
       quantity = items.reduce((sum, item) => sum + item.quantity, 0);
     }
 
+    const pathname = process.env.PUBLIC_URL;
+    console.log('pathname: ', pathname);
     return (
-      <Link to="/cart" className="cart" aria-live="polite">
+      <Link to={pathname + "/cart"} className="cart" aria-live="polite">
         <span className="cart-name" aria-hidden="true">
           Cart (
         </span>

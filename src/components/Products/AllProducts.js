@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ProductImage from './ProductImage';
+import { Link } from 'react-router-dom';
 
 const isThereACurrencyPrice = product => {
   try {
@@ -33,9 +34,9 @@ const AllProducts = props => {
                 }
 
                 return (
-                  <a
+                  <Link
                     className="product-item"
-                    href={'/product/' + product.id}
+                    to={'/product/' + product.id}
                     onClick={() => window.ga_onProductClick(product, eventCategory)}
                     key={product.id}>
                     <div
@@ -53,7 +54,7 @@ const AllProducts = props => {
                         {isThereACurrencyPrice(product)}
                       </div>
                     </div>
-                  </a>
+                  </Link>
                 );
               })}
             </div>

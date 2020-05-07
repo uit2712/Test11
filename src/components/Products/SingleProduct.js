@@ -66,7 +66,6 @@ class SingleProduct extends Component {
           .AddCart(id, this.props.product.quantity)
 
           .then(cart => {
-            console.log(cart);
             window.ga_onAddProductToCart(product, eventCategory);
             dispatch({ type: CART_UPDATED, gotNew: false });
           })

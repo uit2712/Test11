@@ -17,7 +17,7 @@ class Nav extends React.Component {
   };
 
   click = () => {
-    console.log('You clicked an item');
+    //console.log('You clicked an item');
   };
 
   render() {

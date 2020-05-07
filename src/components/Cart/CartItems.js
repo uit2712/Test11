@@ -19,7 +19,6 @@ class CartItems extends Component {
           .UpdateCartMinus(ID, quantity)
 
           .then(cart => {
-            console.log('cart quantity updated');
             dispatch({ type: FETCH_CART_END, payload: cart, gotNew: true });
           })
 
@@ -37,7 +36,6 @@ class CartItems extends Component {
           .UpdateCartPlus(ID, quantity)
 
           .then(cart => {
-            console.log('cart quantity updated');
 
             dispatch({ type: FETCH_CART_END, payload: cart, gotNew: true });
           })
@@ -56,7 +54,6 @@ class CartItems extends Component {
           .UpdateCart(ID, quantity)
 
           .then(cart => {
-            console.log('cart quantity updated');
             dispatch({ type: FETCH_CART_END, payload: cart });
           })
 
@@ -128,7 +125,6 @@ class CartItems extends Component {
                       defaultValue={item.quantity}
                       onBlur={event => {
                         cart_edit(item.id, event.target.value);
-                        console.log(event.target.value);
                       }}
                     />
                     <button

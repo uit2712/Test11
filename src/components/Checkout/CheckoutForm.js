@@ -104,7 +104,7 @@ class CheckoutForm extends Component {
 
   checkOutStep = (step) => {
     const products = this.state.products;
-    console.log(products);
+    console.log('products: ', products);
     let stepOption = '';
     switch(step) {
       default: break;

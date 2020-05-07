@@ -1,11 +1,8 @@
 {
-  "homepage": "https://uit2712.github.io/Test11/",
   "name": "moltin-react-demo-store",
   "version": "0.2.0",
   "private": true,
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

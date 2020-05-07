@@ -7,7 +7,6 @@ import { connect } from 'react-redux';
 
 import { SUBMIT_PAYMENT, PAYMENT_COMPLETE } from '../../ducks/payments';
 import { FETCH_CART_END, FETCH_CART_START } from '../../ducks/cart';
-import { FETCH_PRODUCTS_END, FETCH_PRODUCTS_START } from '../../ducks/products';
 
 function mapStateToProps(state) {
   return { ...state, push: state.push };
@@ -68,25 +67,6 @@ class CheckoutForm extends Component {
   };
 
   componentDidMount() {
-    // check if we already have a moltin products in the store
-    if (this.props.products.fetched === false) {
-      // dispatch an action to our redux reducers
-      this.props.dispatch(dispatch => {
-        // this action will set a fetching field to true
-        dispatch({ type: FETCH_PRODUCTS_START });
-
-        // get the moltin products from the API
-        api
-          .GetProducts()
-
-          .then(products => {
-            /* now that we have the products, this action will set fetching to false and fetched to true,
-            as well as add the moltin products to the store */
-            dispatch({ type: FETCH_PRODUCTS_END, payload: products });
-          });
-      });
-    }
-
     if (this.props.cart.fetched === false) {
       this.props.dispatch(dispatch => {
         dispatch({ type: FETCH_CART_START });
@@ -99,12 +79,16 @@ class CheckoutForm extends Component {
             dispatch({ type: FETCH_CART_END, payload: cart });
           });
       });
+    } else {
+      this.setState({ products: this.props.cart.cart.data });
     }
   }
 
   checkOutStep = (step) => {
     const products = this.state.products;
-    console.log('products: ', products);
+    if (products.length === 0)
+      return;
+
     let stepOption = '';
     switch(step) {
       default: break;

@@ -100,45 +100,44 @@ class CheckoutForm extends Component {
 
   checkOutStep = (step) => {
     const products = this.state.products;
-    if (products.length === 0)
-      return;
-
-    let stepOption = '';
-    switch(step) {
-      default: break;
-      case 1:
-        stepOption = 'Your Details';
-
-        // send ga
-        window.ga_onCheckOutStep({
-          products,
-          eventCategory,
-          step,
-          stepOption,
-        });
-        break;
-      case 2:
-        stepOption = 'Billing Address';
-
-        // send ga
-        window.ga_onCheckOutStep({
-          products,
-          eventCategory,
-          step,
-          stepOption,
-        });
-        break;
-      case 3:
-        stepOption = 'Shipping Address';
-
-        // send ga
-        window.ga_onCheckOutStep({
-          products,
-          eventCategory,
-          step,
-          stepOption,
-        });
-        break;
+    if (products.length > 0) {
+      let stepOption = '';
+      switch(step) {
+        default: break;
+        case 1:
+          stepOption = 'Your Details';
+  
+          // send ga
+          window.ga_onCheckOutStep({
+            products,
+            eventCategory,
+            step,
+            stepOption,
+          });
+          break;
+        case 2:
+          stepOption = 'Billing Address';
+  
+          // send ga
+          window.ga_onCheckOutStep({
+            products,
+            eventCategory,
+            step,
+            stepOption,
+          });
+          break;
+        case 3:
+          stepOption = 'Shipping Address';
+  
+          // send ga
+          window.ga_onCheckOutStep({
+            products,
+            eventCategory,
+            step,
+            stepOption,
+          });
+          break;
+      }
     }
   }
 

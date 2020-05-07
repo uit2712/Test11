@@ -104,7 +104,9 @@
           })
         });
 
-        ga('ec:setAction', eventAction.detail);
+        ga('ec:setAction', eventAction.detail, {
+          'list': 'Products'
+        });
         ga('send', hitType.pageview);
       }
 
@@ -119,7 +121,7 @@
         })
 
         ga('ec:setAction', eventAction.detail, {
-          'list': 'Products'
+          'list': 'Product details'
         });
         ga('send', hitType.pageview);
       }

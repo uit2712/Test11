@@ -43,7 +43,7 @@ class StyleProducts extends Component {
             return (
               <a
                 className="product-item"
-                href={'product/' + product.id}
+                href={'/product/' + product.id}
                 onClick={() => window.ga_onProductClick(product, eventCategory)}
                 key={product.id}>
                 <div

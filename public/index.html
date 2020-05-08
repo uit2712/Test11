@@ -150,7 +150,9 @@
         });
       }
 
-      window.ga_onAddProductToCart = function(product, eventCategory) {
+      window.ga_onAddProductToCart = function({
+        product, eventCategory, quantity,
+      }) {
         if (!product || !eventCategory)
           return;
 
@@ -158,6 +160,7 @@
           id: product?.id,
           name: product?.name,
           price: product?.price[0]?.amount,
+          quantity
         });
         
         ga('ec:setAction', eventAction.add);

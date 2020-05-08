@@ -38,6 +38,8 @@ class TopPicks extends Component {
       });
 
       var products = this.props.products.products;
+      const eventCategory = 'Home - Top picks';
+      window.ga_onViewListProducts(products.data);
 
       return (
         <div>
@@ -56,7 +58,6 @@ class TopPicks extends Component {
               isNew = 'new';
             }
 
-            const eventCategory = 'Home - Top picks';
             return (
               <Link
                 className={`product-item ${isNew}`}

@@ -20,7 +20,7 @@ const AllProducts = props => {
     var products = props.products.products;
     const eventCategory = 'All Products';
     const list = 'Products';
-    window.ga_onViewListProducts(products.data);
+    window.ga_onViewListProducts(products.data, list);
 
     return (
       <main role="main" id="container" className="main-container push">

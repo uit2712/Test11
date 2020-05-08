@@ -40,7 +40,7 @@ class TopPicks extends Component {
       var products = this.props.products.products;
       const eventCategory = 'Home - Top picks';
       const list = 'Homepage'
-      window.ga_onViewListProducts(TopPicksToMap);
+      window.ga_onViewListProducts(TopPicksToMap, list);
 
       return (
         <div>

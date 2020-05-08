@@ -94,7 +94,7 @@
         });
       }
 
-      window.ga_onViewListProducts = function(products) {
+      window.ga_onViewListProducts = function(products, list) {
         if (!products)
           return;
 
@@ -107,7 +107,7 @@
         });
 
         ga('ec:setAction', eventAction.detail, {
-          'list': 'Products'
+          list
         });
         ga('send', hitType.pageview);
       }

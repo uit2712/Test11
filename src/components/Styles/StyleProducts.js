@@ -16,7 +16,8 @@ class StyleProducts extends Component {
       return category.name === CurrentStyle;
     });
     const eventCategory = 'Styles';
-    const list = 'Styles'
+    const list = 'Styles - ' + CurrentStyle;
+    window.ga_onViewListProducts(productsToMap, list);
 
     try {
       var CurrentCategoryProductIDs =

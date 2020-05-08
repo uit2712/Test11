@@ -20,7 +20,7 @@ function App(props) {
     <Switch>
       <Route exact path={`${currentPath}/`} component={Home} />
       <Route path={`${currentPath}/cart`} component={Cart} />
-      <Route path={`${currentPath}styles`} component={StylesContainer} />
+      <Route path={`${currentPath}/styles`} component={StylesContainer} />
       <Route path={`${currentPath}/products`} component={ProductsContainer} />
       <Route path={`${currentPath}/checkout`} component={CheckoutContainer} />
       <Route

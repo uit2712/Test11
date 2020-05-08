@@ -14,7 +14,7 @@ import Footer from './global/Footer';
 
 
 function App(props) {
-  const currentPath = props.location ? props.location.pathname : '';
+  const currentPath = '';
   return (
   <div>
     <Switch>

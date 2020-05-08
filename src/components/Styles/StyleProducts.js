@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ProductImage from '../Products/ProductImage';
+import { Link } from 'react-router-dom';
 
 function mapStateToProps(state) {
   return state;
@@ -41,9 +42,9 @@ class StyleProducts extends Component {
             }
 
             return (
-              <a
+              <Link
                 className="product-item"
-                href={'/product/' + product.id}
+                to={'/product/' + product.id}
                 onClick={() => window.ga_onProductClick(product, eventCategory)}
                 key={product.id}>
                 <div
@@ -63,7 +64,7 @@ class StyleProducts extends Component {
                     </div>
                   </div>
                 </div>
-              </a>
+              </Link>
             );
           })}
         </div>

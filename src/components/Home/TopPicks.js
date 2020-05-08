@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ProductImage from '../Products/ProductImage';
+import { Link } from 'react-router-dom';
 
 function mapStateToProps(state) {
   return state;
@@ -55,10 +56,12 @@ class TopPicks extends Component {
               isNew = 'new';
             }
 
+            const eventCategory = 'Home - Top picks';
             return (
-              <a
+              <Link
                 className={`product-item ${isNew}`}
-                href={'/product/' + top_pick.id}
+                to={'/product/' + top_pick.id}
+                onClick={() => window.ga_onProductClick(top_pick, eventCategory)}
                 key={top_pick.id}
                 id={top_pick.id}>
                 <div
@@ -78,7 +81,7 @@ class TopPicks extends Component {
                     </div>
                   </div>
                 </div>
-              </a>
+              </Link>
             );
           })}
         </div>

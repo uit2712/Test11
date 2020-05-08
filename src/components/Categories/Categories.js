@@ -4,6 +4,7 @@ import ProductImage from '../Products/ProductImage';
 import { push } from 'react-router-redux';
 
 import { SET_STYLE } from '../../ducks/styles';
+import { Link } from 'react-router-dom';
 
 function mapStateToProps(state) {
   return state;
@@ -55,9 +56,9 @@ class Categories extends Component {
               }
 
               return (
-                <a
+                <Link
                   className="styles-item"
-                  href="styles"
+                  to="/styles"
                   style={{ background: background }}
                   name={category.name}
                   key={category.id}
@@ -85,7 +86,7 @@ class Categories extends Component {
                       our {category.name} collection{' '}
                     </span>now
                   </div>
-                </a>
+                </Link>
               );
             } else {
               return (

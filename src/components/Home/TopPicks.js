@@ -39,6 +39,7 @@ class TopPicks extends Component {
 
       var products = this.props.products.products;
       const eventCategory = 'Home - Top picks';
+      const list = 'Homepage'
       window.ga_onViewListProducts(TopPicksToMap);
 
       return (
@@ -62,7 +63,9 @@ class TopPicks extends Component {
               <Link
                 className={`product-item ${isNew}`}
                 to={'/product/' + top_pick.id}
-                onClick={() => window.ga_onProductClick(top_pick, eventCategory)}
+                onClick={() => window.ga_onProductClick({
+                  product: top_pick, eventCategory, list
+                })}
                 key={top_pick.id}
                 id={top_pick.id}>
                 <div

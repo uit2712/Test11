@@ -40,7 +40,7 @@
       ga('send', 'pageview');
 
       var domainTracking = '';
-      var prefix ='_day2';
+      var prefix ='_day3';
       var eventAction = {
           click: 'click' + prefix,
           detail: 'detail' + prefix,
@@ -70,7 +70,9 @@
   </head>
   <body>
     <script type="text/javascript">
-      window.ga_onProductClick = function(product, eventCategory) {
+      window.ga_onProductClick = function({
+        product, eventCategory, list
+      }) {
         if (!product)
           return;
 
@@ -81,7 +83,7 @@
         });
 
         ga('ec:setAction', eventAction.click, {
-          'list': 'Products'
+          list
         });
         
         ga('send', {

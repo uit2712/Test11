@@ -19,6 +19,7 @@ const AllProducts = props => {
   if (props.css !== null && props.products.products.data.length > 0) {
     var products = props.products.products;
     const eventCategory = 'All Products';
+    const list = 'Products';
     window.ga_onViewListProducts(products.data);
 
     return (
@@ -38,7 +39,9 @@ const AllProducts = props => {
                   <Link
                     className="product-item"
                     to={'/product/' + product.id}
-                    onClick={() => window.ga_onProductClick(product, eventCategory)}
+                    onClick={() => window.ga_onProductClick({
+                      product, eventCategory, list,
+                    })}
                     key={product.id}>
                     <div
                       className="product-image"

@@ -16,6 +16,7 @@ class StyleProducts extends Component {
       return category.name === CurrentStyle;
     });
     const eventCategory = 'Styles';
+    const list = 'Styles'
 
     try {
       var CurrentCategoryProductIDs =
@@ -45,7 +46,9 @@ class StyleProducts extends Component {
               <Link
                 className="product-item"
                 to={'/product/' + product.id}
-                onClick={() => window.ga_onProductClick(product, eventCategory)}
+                onClick={() => window.ga_onProductClick({
+                  product, eventCategory, list
+                })}
                 key={product.id}>
                 <div
                   className="product-image"

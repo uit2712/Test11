@@ -17,7 +17,6 @@ class StyleProducts extends Component {
     });
     const eventCategory = 'Styles';
     const list = 'Styles - ' + CurrentStyle;
-    window.ga_onViewListProducts(productsToMap, list);
 
     try {
       var CurrentCategoryProductIDs =
@@ -31,6 +30,8 @@ class StyleProducts extends Component {
         });
         productsToMap.push(Product);
       });
+
+      window.ga_onViewListProducts(productsToMap, list);
 
       return (
         <div className="product-list">

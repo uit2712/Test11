@@ -13,7 +13,7 @@
     "@moltin/sdk": "^3.18.1",
     "gh-pages": "^2.2.0",
     "history": "^4.7.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.5",
